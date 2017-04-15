@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+ 
+  <div class="tabs">
+          <div ng-click="tabChanged(-1);" >General</div>
+          <div ng-click="tabChanged(0);">Grid Tab</div>
+      </div>
+      <div ng-show="tabs.selectedTab === -1">
+        <div style="margin-top:20px;">General Tab Content</div>
+      </div>
+      <div ng-if="tabs.selectedTab === 0">
+        <div ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav  class="grid"></div>
+        
+      </div>
+  
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
